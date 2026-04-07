@@ -14,7 +14,8 @@ namespace TwoHundredQuestions
             Program obj = new Program();
             obj.SumOfArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3]);
             obj.MinimunElement([1, 2, 3, 4, 1, 2, 3, 4, 1, 3]);
-            obj.ElementAppears([1, 2, 3, 4, 1, 2, 3, 4, 1, 3],2);
+            obj.ElementAppears([1, 2, 3, 4, 1, 2, 3, 4, 1, 3], 2);
+            obj.ReverseInArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3,9]);
 
 
 
@@ -63,6 +64,21 @@ namespace TwoHundredQuestions
             return Element;
         }
 
+        // Q.24 Reverse an array in-place without built-in Reverse()
+        public Array ReverseInArray(int[] n)
+        {
+            int[] reverse = new int[n.Length];
+            int rev = 0;
+
+            for (int i = n.Length - 1; i >= 0; i--)
+            {
+
+                reverse[rev] = n[i];
+                rev++;
+            }
+
+            return reverse;
+        }
 
 
 
