@@ -15,7 +15,8 @@ namespace TwoHundredQuestions
             obj.SumOfArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3]);
             obj.MinimunElement([1, 2, 3, 4, 1, 2, 3, 4, 1, 3]);
             obj.ElementAppears([1, 2, 3, 4, 1, 2, 3, 4, 1, 3], 2);
-            obj.ReverseInArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3,9]);
+            obj.ReverseInArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
+            obj.CheckIsAscendingArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
 
 
 
@@ -80,6 +81,19 @@ namespace TwoHundredQuestions
             return reverse;
         }
 
+
+        // Q.25 Check if an array is sorted in ascending order.
+        public bool CheckIsAscendingArray(int[] n)
+        {
+            for(int i = 0; i< n.Length-1; i++)
+            {
+                if (n[i] > n[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
 
 
