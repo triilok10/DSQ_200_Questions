@@ -17,6 +17,7 @@ namespace TwoHundredQuestions
             obj.ElementAppears([1, 2, 3, 4, 1, 2, 3, 4, 1, 3], 2);
             obj.ReverseInArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
             obj.CheckIsAscendingArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
+            obj.RotateArrayByK([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9], 3);
 
 
 
@@ -85,7 +86,7 @@ namespace TwoHundredQuestions
         // Q.25 Check if an array is sorted in ascending order.
         public bool CheckIsAscendingArray(int[] n)
         {
-            for(int i = 0; i< n.Length-1; i++)
+            for (int i = 0; i < n.Length - 1; i++)
             {
                 if (n[i] > n[i + 1])
                 {
@@ -95,7 +96,30 @@ namespace TwoHundredQuestions
             return true;
         }
 
+        // 26 Rotate an array to the right by K positions in O(n) time, O(1) space.
+        public void RotateArrayByK(int[] n, int k)
+        {
+            if (k > 0)
+            {
+                k = k % n.Length;
+                Reverse(n, 0, n.Length - 1);
+                Reverse(n, 0, k - 1);
+                Reverse(n, k, n.Length - 1);
 
+                Console.WriteLine(string.Join(",", n));
+            }
+        }
 
+        void Reverse(int[] n, int l, int r)
+        {
+            while (l < r)
+            {
+                int temp = n[l];
+                n[l] = n[r];
+                n[r] = temp;
+                l++;
+                r--;
+            }
+        }
     }
 }
