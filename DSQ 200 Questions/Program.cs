@@ -127,7 +127,7 @@ namespace TwoHundredQuestions
 
         public void ArraySort(int[] n)
         {
-            if (n.Length < 0 || n.Length == null)
+            if (n.Length < 0)
             {
                 return;
             }
