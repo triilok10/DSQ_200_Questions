@@ -18,6 +18,7 @@ namespace TwoHundredQuestions
             obj.ReverseInArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
             obj.CheckIsAscendingArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
             obj.RotateArrayByK([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9], 3);
+            obj.ArraySort([1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0]);
 
 
 
@@ -119,6 +120,39 @@ namespace TwoHundredQuestions
                 n[r] = temp;
                 l++;
                 r--;
+            }
+        }
+
+        //Q. 27 Given array of 0s and 1s, move all 0s to left and 1s to right in one pass.
+
+        public void ArraySort(int[] n)
+        {
+            if (n.Length < 0 || n.Length == null)
+            {
+                return;
+            }
+
+            int left = 0;
+            int right = n.Length - 1;
+
+
+            while (left < right)
+            {
+
+                if (n[left] == 0)
+                {
+                    left++;
+                }
+                else if (n[right] == 1)
+                {
+                    right--;
+                }
+                else
+                {
+                    int temp = n[left];
+                    n[left] = n[right];
+                    n[right] = temp;
+                }
             }
         }
     }
