@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.VisualBasic;
+using System.Text;
+using System.Xml.Linq;
 
 
 //Name Space
@@ -152,6 +154,28 @@ namespace TwoHundredQuestions
                     int temp = n[left];
                     n[left] = n[right];
                     n[right] = temp;
+                }
+            }
+        }
+
+
+        // Q. 28 Find the intersection of two arrays(elements common to both)
+
+        public void InterActionArray(int[] x, int[] y)
+        {
+            List<int> list = new List<int>();
+
+            if (x == null || y == null || x.Length == 0 || y.Length == 0)
+            {
+                return;
+            }
+
+
+            foreach (int i in y)
+            {
+                if (x.Contains(i))
+                {
+                    list.Add(i);
                 }
             }
         }
