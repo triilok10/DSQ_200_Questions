@@ -21,6 +21,7 @@ namespace TwoHundredQuestions
             obj.CheckIsAscendingArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9]);
             obj.RotateArrayByK([1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 9], 3);
             obj.ArraySort([1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0]);
+            obj.UnionOfArray([1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0,2,7,3], [1,3,5,3,325,3,0]);
 
 
 
@@ -178,6 +179,37 @@ namespace TwoHundredQuestions
                     list.Add(i);
                 }
             }
+        }
+
+        // Find the union of two arrays (all unique elements from both)
+        public void UnionOfArray(int[] x, int [] y)
+        {
+
+            HashSet<int> set = new HashSet<int>();
+
+            if (x == null || y == null || x.Length == 0 || y.Length == 0)
+            {
+                return;
+            }
+
+            foreach (int i in x)
+            {
+                if (!set.Contains(i))
+                {
+                    set.Add(i);
+                }
+
+            }
+
+            foreach (int i in y)
+            {
+                if (!set.Contains(i))
+                {
+                    set.Add(i);
+                }
+                
+            }
+            Console.WriteLine("Union Values", set.ToArray());
         }
     }
 }
